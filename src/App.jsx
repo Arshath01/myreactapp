@@ -1,56 +1,30 @@
 
-import { useState } from 'react';
+import InputField from './components/input';
+import Navbar from "./components/Navbar";
+import Section from './components/section';
+
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount]  = useState(0);
-  const [value, setValue] = useState("");
-  //  value = "my name";
-  //  count = 0
-  function handleIncrement(){
-    console.log("increment button is pressed...");
-    setCount(count+1);
-  }
 
-  function handleDecrement() {
-    console.log("decrement button is pressed...");
-    if(count <= 0){
-      setCount(0);
-    }
-    else{
-      setCount(count - 1);
-    }
-  }
+  const [bool,setBool] = useState(false);
+ return (
+  <div>
+    <Navbar/>
+    <button onClick={()=>setBool(true)}>
+      click me to show section...
+    </button>
 
-  function handleChange(myval){
-    console.log(myval);
-    setValue(myval.target.value);
-    console.log(value);
-  }
+    <button onClick={()=>setBool(false)}>
+      click me to hide section...
+    </button>
 
-  return (
-    <div className="App">
-      <h1>hello</h1>
-
-      <button onClick={handleIncrement}>
-        Increment
-      </button>
-
-      <p> {count} </p>
-
-      <button onClick={handleDecrement}>
-        Decrement
-      </button> <br /> <br />
-
-      <input 
-        type="text" 
-        placeholder='enter name...' 
-        value={value} 
-        onChange={(myval)=> handleChange(myval)}
-      />
-
-    </div>
-  );
+    {bool && <Section/>}
+    {/* <InputField/> */}
+    
+  </div>
+ );
 }
 
 export default App;
