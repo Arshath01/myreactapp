@@ -1,40 +1,30 @@
-.main_div {
+body {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  width: 60%;
-}
-#input_field {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#btn {
-  border-radius: 5px;
-  padding: 5px;
-  color: white;
-  background: #000;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ul_element {
-  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.ul_element li{
-  list-style: none;
-  margin: 0px 5px 0px 5px;
-  cursor: pointer;
+.calc {
+  border: 2px solid black;
+  padding: 2px 15px;
+  border-radius: 10px;
+  width: 400px;
 }
-#section{
-  background: rgb(226, 101, 101);
-  color: white;
-  width: 60%;
-  margin:0 auto;
-  padding: 10px;
+
+.display {
+  border: 1px solid grey;
+  padding: 0px;
+  border-radius: 10px;
+}
+
+.buttons_wrap{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 5px;
+}
+#button{
   border-radius: 5px;
+  color: white;
+  background-color: black;
 }
