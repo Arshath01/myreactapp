@@ -4,7 +4,7 @@ function App(){
   const [display,setDisplay] = useState('');
   const arr = ['0','1','2','3','4','5',
   '6','7','8','9','+','*','-',
-  '/','=','C'];
+  '/','=','C','del'];
 
   function handleButton(buttons){
     if(buttons === "="){
@@ -15,6 +15,9 @@ function App(){
     }
     else if(buttons === 'C'){
       setDisplay('');
+    }
+    else if(buttons === 'del'){
+      setDisplay((prevState) => prevState.slice(0,-1));
     }
     else{
       setDisplay(prevState => prevState + buttons);
